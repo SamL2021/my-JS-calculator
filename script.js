@@ -96,16 +96,16 @@ const calculate = () => {
     if (isNaN(prev) || isNaN(current)) return;
     switch (calculation) {
         case "+":
-            calculation = num1 + num2;
+            calculation = prev + current;
             break;
         case "-":
-            calculation = num1 - num2;
+            calculation = prev - current;
             break;
         case "x":
-            calculation = num1 * num2;
+            calculation = prev * current;
             break;
         case "÷":
-            calculation = num1 / num2;
+            calculation = prev / current;
             break;
         default:
             return;
