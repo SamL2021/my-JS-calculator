@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+}
+
+.page {
+  background-color: #00a0fe;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 350px;
+  height: 475px;
+  margin: auto;
+  border: 1px #fff;
+  border-radius: 2.5%;
+  margin-top: 50px;
+}
+
+.display__container, .display__container--inner-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 300px;
+  height: 150px;
+  border: 2px #00a0fe solid;
+  margin-top: 25px;
+  margin-left: 23px;
+  border-radius: 3%;
+}
+.display__container--inner-display {
+  width: 280px;
+  height: 70px;
+  margin: auto;
+  background-color: #00a0fe;
+  border-radius: 3%;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  color: white;
+  font-size: 1.5rem;
+  height: 60px;
+  padding: 5px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.output .previous-operand {
+  font-size: 1rem;
+}
+
+.keys, .keys__container-two, .keys__container-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px;
+}
+.keys__container-one {
+  flex-direction: row;
+}
+.keys__container-one--blue {
+  border-radius: 8px;
+  background-color: #00a0fe;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.keys__container-two {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.keys__container-two--white {
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #fff;
+  border: #00a0fe solid 1px;
+  color: #00a0fe;
+  padding: 2px 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.theme__btns {
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #fff;
+  border: #00a0fe solid 1px;
+  color: #00a0fe;
+  padding: 2px 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  align-items: center;
+}
+
+/*# sourceMappingURL=index.css.map */

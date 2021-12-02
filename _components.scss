@@ -1,0 +1,42 @@
+@use "palette";
+
+@mixin blue-button {
+  border-radius: 8px;
+  background-color: palette.$clr-dark;
+  border: none;
+  color: palette.$clr-light;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+@mixin white-button {
+  justify-content: center;
+  border-radius: 8px;
+  background-color: palette.$clr-light;
+  border: palette.$clr-dark solid 1px;
+  color: palette.$clr-dark;
+  padding: 2px 24px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}
+
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-mix($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
