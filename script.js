@@ -11,7 +11,10 @@ let previousOperand = "0";
 let operator = "";
 
 // update the values inside the output also need to make sure only one decimal
-const updateDisplay = () => {};
+const updateDisplay = () => {
+    currentText.innerHTML = currentOperand;
+    previousText.innerHTML = previousOperand;
+};
 
 // Number Btns
 numberBtns.forEach((button) => {
@@ -37,7 +40,7 @@ operationBtns.forEach((button) => {
         submitOperator(button.innerHTML.trim());
         selectOperation(button.innerHTML);
         calculate();
-        // updateDisplay();
+        updateDisplay();
     });
 });
 
@@ -52,7 +55,7 @@ equalsBtn.addEventListener("click", (button) => {
 });
 
 const submitEquals = (x) => {
-    console.log("Equals");
+    // console.log("Equals");
     console.log(calculate());
 };
 
@@ -94,28 +97,29 @@ const calculate = () => {
     const current = parseFloat(currentOperand);
 
     if (isNaN(prev) || isNaN(current)) return;
-    switch (calculation) {
+    switch (operator) {
         case "+":
-            calculation = prev + current;
-            break;
+            return (calculation = prev + current);
+
         case "-":
-            calculation = prev - current;
-            break;
+            return (calculation = prev - current);
+
         case "x":
-            calculation = prev * current;
-            break;
+            return (calculation = prev * current);
+
         case "÷":
-            calculation = prev / current;
-            break;
+            return (calculation = prev / current);
+
         default:
             return;
     }
 };
 
+// Select Operator
 const selectOperation = (operation) => {
     if (currentOperand === "") return;
     if (previousOperand !== "")
-        // If history has value then compute (How do we get values into history?)
+        // If history has value then compute
         calculate(); //otherwise
     operation = operation;
     // done typing the previous number move to history
