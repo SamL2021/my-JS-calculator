@@ -14,6 +14,12 @@ let operator = "";
 const updateDisplay = () => {
     currentText.innerHTML = currentOperand;
     previousText.innerHTML = previousOperand;
+    if (operator != null) {
+        // creates string to show operation
+        previousText.innerText = previousOperand + operator;
+    } else {
+        previousText.innerText = "";
+    }
 };
 
 // Number Btns
@@ -21,6 +27,7 @@ numberBtns.forEach((button) => {
     button.addEventListener("click", () => {
         // console.log(button.innerHTML);
         submitNumber(button.innerHTML.trim());
+        updateDisplay();
     });
 });
 
@@ -51,17 +58,20 @@ const submitOperator = (x) => {
 };
 
 equalsBtn.addEventListener("click", (button) => {
+    // previousOperand = currentOperand;
+    // operator = "";
     submitEquals();
 });
 
 const submitEquals = (x) => {
-    // console.log("Equals");
+    updateDisplay();
     console.log(calculate());
 };
 
 // All Clear Button "AC"
 clearAllButton.addEventListener("click", (button) => {
     submitAllClear();
+    updateDisplay();
     // console.log("Clear");
 });
 
@@ -69,6 +79,7 @@ clearAllButton.addEventListener("click", (button) => {
 const submitAllClear = (x) => {
     currentOperand = "0";
     previousOperand = "";
+    operator = "";
     // operation = undefined;
     console.log(currentOperand);
 };
@@ -76,6 +87,7 @@ const submitAllClear = (x) => {
 // Delete Button "C"
 deleteBtn.addEventListener("click", (button) => {
     submitDelete();
+    updateDisplay();
     // console.log("delete");
 });
 
@@ -99,16 +111,16 @@ const calculate = () => {
     if (isNaN(prev) || isNaN(current)) return;
     switch (operator) {
         case "+":
-            return (calculation = prev + current);
+            return (currentText.innerHTML = calculation = prev + current);
 
         case "-":
-            return (calculation = prev - current);
+            return (currentText.innerHTML = calculation = prev - current);
 
         case "x":
-            return (calculation = prev * current);
+            return (currentText.innerHTML = calculation = prev * current);
 
         case "÷":
-            return (calculation = prev / current);
+            return (currentText.innerHTML = calculation = prev / current);
 
         default:
             return;
