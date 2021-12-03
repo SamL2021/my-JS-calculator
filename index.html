@@ -1,79 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="index.css" />
-    <title>Calculator</title>
-  </head>
-  <body class="page">
-    <!-- calculator -->
-    <div class="calculator">
-      <div class="display__container">
-        <div class="display__container--inner-display">
-          <!-- display
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="index.css" />
+        <title>Calculator</title>
+    </head>
+    <body class="page">
+        <!-- calculator -->
+        <div class="calculator">
+            <div class="display__container">
+                <div class="display__container--inner-display">
+                    <!-- display
           <input type="text" class="text-display" id="display" disabled /> -->
-          <div class="output">
-            <div class="previous-operand" data-previous-operand></div>
-            <div class="current-operand" data-current-operand></div>
-          </div>
-        </div>
-      </div>
+                    <div class="output">
+                        <div
+                            class="previous-operand"
+                            data-previous-operand
+                        ></div>
+                        <div class="current-operand" data-current-operand></div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- keys -->
-      <div class="keys calculator__keys">
-        <div class="keys__container-one">
-          <button class="keys__container-one--blue">ON</button>
-          <button class="keys__container-one--blue">MRC</button>
-          <button class="keys__container-one--blue">M-</button>
-          <button class="keys__container-one--blue">M+</button>
-        </div>
+            <!-- keys -->
+            <div class="keys calculator__keys">
+                <div class="keys__container-one">
+                    <button class="keys__container-one--blue">ON</button>
+                    <button class="keys__container-one--blue">MRC</button>
+                    <button class="keys__container-one--blue">M-</button>
+                    <button class="keys__container-one--blue">M+</button>
+                </div>
 
-        <div class="keys__container-two">
-          <button class="keys__container-two--white operator" data-all-clear>
-            AC
-          </button>
-          <button class="keys__container-two--white operator" data-delete>
-            C
-          </button>
-          <button class="keys__container-two--white">%</button>
-          <button class="keys__container-two--white">√</button>
-          <button class="keys__container-two--white" data-number>7</button>
-          <button class="keys__container-two--white" data-number>8</button>
-          <button class="keys__container-two--white" data-number>9</button>
-          <button class="keys__container-two--white" data-operation>÷</button>
-          <button class="keys__container-two--white" data-number>4</button>
-          <button class="keys__container-two--white" data-number>5</button>
-          <button class="keys__container-two--white" data-number>6</button>
-          <button class="keys__container-two--white operator" data-operation>
-            x
-          </button>
-          <button class="keys__container-two--white" data-number>1</button>
-          <button class="keys__container-two--white" data-number>2</button>
-          <button class="keys__container-two--white" data-number>3</button>
-          <button class="keys__container-two--white operator" data-operation>
-            -
-          </button>
-          <button class="keys__container-two--white" data-number>0</button>
-          <button class="keys__container-two--white operator" data-number>
-            .
-          </button>
-          <button class="keys__container-two--white equal" data-equals>
-            =
-          </button>
-          <button class="keys__container-two--white operator" data-operation>
-            +
-          </button>
+                <div class="keys__container-two">
+                    <button
+                        class="keys__container-two--white operator"
+                        data-all-clear
+                    >
+                        AC
+                    </button>
+                    <button
+                        class="keys__container-two--white operator"
+                        data-delete
+                    >
+                        C
+                    </button>
+                    <button class="keys__container-two--white">%</button>
+                    <button class="keys__container-two--white">√</button>
+                    <button class="keys__container-two--white" data-number>
+                        7
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        8
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        9
+                    </button>
+                    <button class="keys__container-two--white" data-operation>
+                        ÷
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        4
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        5
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        6
+                    </button>
+                    <button
+                        class="keys__container-two--white operator"
+                        data-operation
+                    >
+                        x
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        1
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        2
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        3
+                    </button>
+                    <button
+                        class="keys__container-two--white operator"
+                        data-operation
+                    >
+                        -
+                    </button>
+                    <button class="keys__container-two--white" data-number>
+                        0
+                    </button>
+                    <button
+                        class="keys__container-two--white operator"
+                        data-number
+                    >
+                        .
+                    </button>
+                    <button
+                        class="keys__container-two--white equal"
+                        data-equals
+                    >
+                        =
+                    </button>
+                    <button
+                        class="keys__container-two--white operator"
+                        data-operation
+                    >
+                        +
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+        <script src="script.js"></script>
+    </body>
 </html>

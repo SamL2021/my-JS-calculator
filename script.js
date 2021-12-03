@@ -13,7 +13,7 @@ let operator = "";
 // update the values inside the output also need to make sure only one decimal
 const updateDisplay = () => {
     currentText.innerHTML = currentOperand;
-    previousText.innerHTML = previousOperand;
+    // previousText.innerHTML = previousOperand;
     if (operator != null) {
         // creates string to show operation
         previousText.innerText = previousOperand + operator;
@@ -25,7 +25,6 @@ const updateDisplay = () => {
 // Number Btns
 numberBtns.forEach((button) => {
     button.addEventListener("click", () => {
-        // console.log(button.innerHTML);
         submitNumber(button.innerHTML.trim());
         updateDisplay();
     });
@@ -38,7 +37,6 @@ const submitNumber = (x) => {
     } else {
         currentOperand = currentOperand + x;
     }
-    console.log(currentOperand);
 };
 
 // Operation Btns
@@ -54,25 +52,21 @@ operationBtns.forEach((button) => {
 // Get values from operations
 const submitOperator = (x) => {
     operator = x;
-    console.log(operator);
 };
 
 equalsBtn.addEventListener("click", (button) => {
-    // previousOperand = currentOperand;
-    // operator = "";
     submitEquals();
 });
 
 const submitEquals = (x) => {
     updateDisplay();
-    console.log(calculate());
+    calculate();
 };
 
 // All Clear Button "AC"
 clearAllButton.addEventListener("click", (button) => {
     submitAllClear();
     updateDisplay();
-    // console.log("Clear");
 });
 
 // All Clear function "AC"
@@ -80,15 +74,12 @@ const submitAllClear = (x) => {
     currentOperand = "0";
     previousOperand = "";
     operator = "";
-    // operation = undefined;
-    console.log(currentOperand);
 };
 
 // Delete Button "C"
 deleteBtn.addEventListener("click", (button) => {
     submitDelete();
     updateDisplay();
-    // console.log("delete");
 });
 
 // Delete Button "C"
@@ -98,29 +89,26 @@ const submitDelete = (x) => {
     } else {
         currentOperand = currentOperand.slice(0, -1);
     }
-
-    console.log(currentOperand);
 };
 
 // Calculates and generates result.
 const calculate = () => {
-    let calculation;
     const prev = parseFloat(previousOperand);
     const current = parseFloat(currentOperand);
 
     if (isNaN(prev) || isNaN(current)) return;
     switch (operator) {
         case "+":
-            return (currentText.innerHTML = calculation = prev + current);
+            return (currentText.innerHTML = prev + current);
 
         case "-":
-            return (currentText.innerHTML = calculation = prev - current);
+            return (currentText.innerHTML = prev - current);
 
         case "x":
-            return (currentText.innerHTML = calculation = prev * current);
+            return (currentText.innerHTML = prev * current);
 
         case "÷":
-            return (currentText.innerHTML = calculation = prev / current);
+            return (currentText.innerHTML = prev / current);
 
         default:
             return;
@@ -128,12 +116,12 @@ const calculate = () => {
 };
 
 // Select Operator
-const selectOperation = (operation) => {
+const selectOperation = () => {
     if (currentOperand === "") return;
+    // If history has value...
     if (previousOperand !== "")
-        // If history has value then compute
+        // thealculate
         calculate(); //otherwise
-    operation = operation;
     // done typing the previous number move to history
     previousOperand = currentOperand;
     currentOperand = "";
