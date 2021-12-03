@@ -51,7 +51,9 @@ operationBtns.forEach((button) => {
 
 // Get values from operations
 const submitOperator = (x) => {
+    if (operator !== "") return;
     operator = x;
+    // calculate();
 };
 
 equalsBtn.addEventListener("click", (button) => {
@@ -59,8 +61,16 @@ equalsBtn.addEventListener("click", (button) => {
 });
 
 const submitEquals = (x) => {
+    let total = calculate(
+        parseFloat(previousOperand),
+        parseFloat(currentOperand),
+        operator
+    );
+
+    previousOperand = currentOperand;
+    currentOperand = total;
+
     updateDisplay();
-    calculate();
 };
 
 // All Clear Button "AC"
@@ -92,35 +102,31 @@ const submitDelete = (x) => {
 };
 
 // Calculates and generates result.
-const calculate = () => {
-    const prev = parseFloat(previousOperand);
-    const current = parseFloat(currentOperand);
-
-    if (isNaN(prev) || isNaN(current)) return;
-    switch (operator) {
+const calculate = (x, y, z) => {
+    if (isNaN(x) || isNaN(y)) return;
+    switch (z) {
         case "+":
-            return (currentText.innerHTML = prev + current);
-
-        case "-":
-            return (currentText.innerHTML = prev - current);
+            return x + y;
 
         case "x":
-            return (currentText.innerHTML = prev * current);
+            return x * y;
 
         case "÷":
-            return (currentText.innerHTML = prev / current);
+            return x / y;
+
+        case "-":
+            return x - y;
 
         default:
             return;
     }
 };
 
-// Select Operator
 const selectOperation = () => {
     if (currentOperand === "") return;
     // If history has value...
     if (previousOperand !== "")
-        // thealculate
+        // then calculate
         calculate(); //otherwise
     // done typing the previous number move to history
     previousOperand = currentOperand;
