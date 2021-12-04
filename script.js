@@ -69,6 +69,7 @@ const submitEquals = (x) => {
 
     previousOperand = currentOperand;
     currentOperand = total;
+    operator = "";
 
     updateDisplay();
 };
